@@ -1,0 +1,15 @@
+ext.ANDROID_GRADLE_PLUGIN_VERSION="3.3.0"
+
+System.getProperties().put("ANDROID_GRADLE_PLUGIN_VERSION", ANDROID_GRADLE_PLUGIN_VERSION)
+
+String getEnvValue(key, defValue) {
+  def val = System.getProperty(key);
+  if (null != val) {
+    return val;
+  }
+  val = System.getenv(key);
+  if (null != val) {
+    return val;
+  }
+  return defValue;
+}
